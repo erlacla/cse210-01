@@ -1,3 +1,10 @@
+'''
+Tic-Tac-Toe and Git workflow
+Author: Erin Engler (using the tutorial found at https://www.youtube.com/watch?v=BHh654_7Cmw)
+
+'''
+
+
 # --------- Global Variables -----------
 
 # Will hold our game board data
@@ -14,11 +21,19 @@ winner = None
 # Tells us who the current player is (X goes first)
 current_player = "X"
 
+# ------------- Classes ---------------
+
+class colors: 
+    RED = '\033[31m'
+    ENDC = '\033[m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    BLUE = '\033[34m'
 
 # ------------- Functions ---------------
 
 # Play a game of tic tac toe
-def play_game():
+def main():
 
   # Show the initial game board
   display_board()
@@ -37,9 +52,9 @@ def play_game():
   
   # Since the game is over, print the winner or tie
   if winner == "X" or winner == "O":
-    print(winner + " won.")
+    print(colors.GREEN + winner + " won!" + colors.ENDC)
   elif winner == None:
-    print("Tie.")
+    print(colors.RED + "It's a draw." + colors.ENDC)
 
 
 # Display the game board to the screen
@@ -200,4 +215,4 @@ def flip_player():
 
 # ------------ Start Execution -------------
 # Play a game of tic tac toe
-play_game()
+main()
